@@ -1,0 +1,16 @@
+{
+  "name": "turbo-computing-machine",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/k07e/turbo-computing-machine",
+  "author": "k07e <sakk7e@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tstl",
+    "dev": "tstl --watch"
+  },
+  "devDependencies": {
+    "typescript-to-lua": "^0.37.1"
+  }
+}
