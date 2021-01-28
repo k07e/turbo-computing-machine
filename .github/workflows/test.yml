@@ -10,14 +10,14 @@ jobs:
         with:
           node-version: '14.15.4'
       - name: Install Yarn
-      - run: |
+        run: |
           npm install -g yarn
       - name: Git configuration
-      - run: |
+        run: |
           git config --global user.email 'sakk7e+dev@gmail.com'
           git config --global user.name 'k07e'
       - name: Test and push
-      - run: |
+        run: |
           yarn test \
             && yarn build \
             && git add -A \
