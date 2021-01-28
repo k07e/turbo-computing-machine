@@ -9,7 +9,17 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14.15.4'
+      - name: Install Yarn
       - run: |
           npm install -g yarn
-          yarn build
-          yarn test
+      - name: Git configuration
+      - run: |
+          git config --global user.email 'sakk7e+dev@gmail.com'
+          git config --global user.name 'k07e'
+      - name: Test and push
+      - run: |
+          yarn test \
+            && yarn build \
+            && git add -A \
+            && git commit -m 'Auto commit after yarn build' \
+            && git push
