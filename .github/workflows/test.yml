@@ -27,4 +27,4 @@ jobs:
             && git add -A \
             && git commit -m 'Auto commit after yarn build' \
             && git remote set-url origin https://x-access-token:${ACCESS_TOKEN}@github.com/k07e/nvim-config.lua.git \
-            && git push origin main
+            && git push -u origin main
