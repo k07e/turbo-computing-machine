@@ -17,9 +17,13 @@ jobs:
           git config --global user.email 'sakk7e+dev@gmail.com'
           git config --global user.name 'k07e'
       - name: Test and push
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           yarn test \
+            && git clone https://github.com/k07e/nvim-config.lua dist \
             && yarn build \
+            && cd dist \
             && git add -A \
             && git commit -m 'Auto commit after yarn build' \
-            && git push
+            && git push https://x-access-token:${ACCESS_TOKEN}@github.com/k07e/nvim-config.lua main
