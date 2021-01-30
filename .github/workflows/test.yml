@@ -24,7 +24,7 @@ jobs:
             && git clone https://github.com/k07e/nvim-config.lua dist \
             && yarn build \
             && cd dist \
-            && if [ "$(git ls-files --exclude-standard -mo) | wc -l" -gt 0 ]; then
+            && if [ "$(git ls-files --exclude-standard -mo | wc -l)" -gt 0 ]; then
               git add -A \
                 && git commit -m 'Auto commit after yarn build' \
                 && git remote set-url origin https://x-access-token:${ACCESS_TOKEN}@github.com/k07e/nvim-config.lua.git \
